@@ -1,17 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Count from './component/Count'
-import Logic from './component/Logic'
+import React from 'react'
 
+import './App.css'
+import NavBar from './components/NavBar'
+import { BrowserRouter ,Routes,Route} from 'react-router-dom'
+import Movie from './components/Movie'
+import WatchList from './components/WatchList'
+import Banner from './components/Banner'
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
+    <BrowserRouter>
+    <NavBar/>
+<Routes>
+<Route path="/" element={<> <Banner/> <Movie/></>}></Route>
+<Route path="/watchlist" element={<WatchList/>}></Route>
+
+</Routes>
+
+    </BrowserRouter>
     
-    <Logic/>
+
     </>
   )
 }
